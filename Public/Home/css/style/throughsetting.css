@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; list-style-type: none;}
+body{ font-size:1rem; color:#333; width:100%; margin:auto; font-family: "微软雅黑";background: #f7f7fa;}
+a,img{ display: block; border:0px;}
+a{text-decoration:none;}
+
+
+.weui_cell_hd{background:#04be01; position:fixed; top:0px; z-index:3;}
+
+.baner{ width:100%; max-width:640px; overflow:hidden; margin:0px auto;}
+.inbaner{ width:100%;}
+.inbaner img{ width:100%;}
+.weui_navbar{ margin-top:146px;}
+
+.pull_m{ width:100%; font-size:1.3rem; line-height:48px; color:#FFF;}
+
+.weui_cell_hd .pull_left{width:30px; height:30px; position:absolute; left:3%; top:6px;}
+.pull_left img{width:26px; height:30px;}
+.search{width:70%; margin:0px 15%; height:26px; border:none; background:#ffffff; border-radius:6px; text-align:center; color:#bfbfbf;}
+.weui_cell_hd .pull_right{width:36px; height:30px; position:absolute; right:3%; top:6px;}
+.pull_right img{width:30px; height:30px;}
+.weui_cell_bd{ margin:52px auto;}
+.weui_cell_bd .ad_tbsc{ width:100%; padding-top:50px;}
+.inad_tbsc{ width:100%;}
+.inal_ad{ width:94%; padding:0px 3%; margin-top:10px; background:#FFF; height:200px;}
+.inal_ad_pic{ width:32%; float:left;}
+.inal_ad_pic img{ width:100%; margin-top:10px;}
+.inal_ad p{ width:62%; height:30px; line-height:30px; float:left; margin-left:6%;}
+.inal_ad_p1{ overflow:hidden; color:#333;}
+.inal_ad_p2{ background:#F90; color:#FFF;}
+.inal_ad_p3{ color:#F90;}
+.inal_ad_p3r{ float:right; text-align:right;}
+
+@media only screen and (min-width: 319px) and (max-width: 400px) {
+	.baner{ height:145px;}
+	.inbaner img{ height:145px;}
+	.weui_navbar{ margin-top:146px;}
+	.inal_ad_pic img{ height:100px;}
+	.inal_ad{ height:120px;}
+	.inal_ad_p1{ margin-top:15px;}
+}
+@media only screen and (min-width: 401px) and (max-width: 480px) {
+	.baner{ height:185px;}
+	.inbaner img{ height:185px;}
+	.weui_navbar{ margin-top:186px;}
+	.inal_ad_pic img{ height:120px;}
+	.inal_ad{ height:140px;}
+	.inal_ad_p1{ margin-top:25px;}
+}
+@media only screen and (min-width: 481px) and (max-width: 560px) {
+	.baner{ height:220px;}
+	.inbaner img{ height:220px;}
+	.weui_navbar{ margin-top:221px;}
+	.inal_ad_pic img{ height:140px;}
+	.inal_ad{ height:160px;}
+	.inal_ad_p1{ margin-top:35px;}
+}
+@media only screen and (min-width: 561px) and (max-width: 640px) {
+	.baner{ height:255px;}
+	.inbaner img{ height:255px;}
+	.weui_navbar{ margin-top:256px;}
+	.inal_ad_pic img{ height:160px;}
+	.inal_ad{ height:180px;}
+	.inal_ad_p1{ margin-top:45px;}
+}
+@media only screen and (min-width: 641px)  {
+	.baner{ height:290px;}
+	.inbaner img{ height:290px;}
+	.weui_navbar{ margin-top:291px;}
+	.inal_ad_pic img{ height:180px;}
+	.inal_ad{ height:200px;}
+	.inal_ad_p1{ margin-top:55px;}
+}
+
+/*
+.pull-right img{width:26px; margin-left:10px; float:left;}
+.weui_cell_bd input{width:100%; height:30px; border:none; text-align:center; background:url(../Img/icon/tb-2.png) no-repeat 30%; background-size:26px 22px; color:#bfbfbf;}
+.inlg_pic{ width: 100%;}
+*/
+

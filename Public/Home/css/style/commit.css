@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*commit*/
+.dizhi{ width:94%; padding:10px 3%; height:60px; margin-top:58px; background:#fcfcfb;}
+.dizhi img{ width:26px; height:26px; float:left; margin-top:17px;}
+.indz_m{ width:76%; float:left; font-size:1.0rem; margin:0px 3%;}
+.indz_mt{ width:100%; line-height:30px;}
+.indz_mt p{ width:50%; float:left;}
+.indz_mb{ width:100%; height:30px; line-height:30px; overflow:hidden;}
+.dzxz{ display:none; width:100%;}
+.dzxz li{ width:96%; height:60px; margin:0px 2%; font-size:1.0rem;}
+.dzxz li input{ width:26px; height:26px; border-radius:50%; float:left; margin-top:30px;}
+.dzxz .tjdz{ display:block; width:38%; background:#fc7b08; color:#FFF; line-height:38px; margin:0px 36%; font-size:0.9rem; font-weight:bold; margin-top:10px; border-radius:6px; text-align:center;}
+.dizhi_djh{ background:#FFF;}
+.indztj{ width:94%; background:#FFC; height:200px; padding:0px 3%; line-height:35px; font-size:1.0rem; position:absolute; top:210px; z-index:3; display:none;}
+.indztj select{ width:23%;}
+.indztj input{ width:70%; float:right; height:25px; font-size:0.9rem; overflow:hidden; margin-top:5px;}
+.indztj .tjdztj{ width:28%; margin:10px 36%; height:35px; font-weight:bold; border-radius:6px;}
+
+
+.spxx{ width:100%; margin-top:10px; line-height:40px; font-size:0.9rem;}
+.spxx li{ width:94%; height:180px; padding:0px 3%; margin-top:10px; background:#fcfcfb;}
+.inspxx_pic{ width:27%; float:left; margin-top:10px;}
+.inspxx_r{ width:63%; margin:10px 5%; float:left;}
+.inspxx_name{ width:100%; height:60px; line-height:60px; overflow:hidden;}
+.inspxx_jgl{ width:100%; height:30px; float:left; color:#fc7b08;}
+.inspxx_m{ width:65%; line-height:30px; float:left; margin:10px auto;}
+.inspxx_m p{ width:32%; float:left; text-align:center;}
+.inspxx_sc{ width:28%; line-height:36px; float:left; margin-left:7%; margin-top:8px; border-radius:6px; font-size:1.2rem; background:#fc7b08; color:#FFF; text-align:center; font-weight:bold;}
+.sphj{ width:94%; padding:0px 3%; height:120px; background:#FFF; line-height:40px; margin-top:10px;}
+.sphj p{ width:100%;}
+.insphj_m span{ float:right; width:26%;}
+.psfs{ width:18px; height:18px; float:right; margin-right:25%; margin-top:12px;}
+.insphj_b span{ float:left; font-size:0.6rem; color:#fc7b08;}
+.spzj{ width:94%; padding:0px 3%; line-height:50px; font-size:1.0rem; margin-top:10px; background:#FFF; height:50px;font-weight:bold;}
+.spzj p{ width:66%; text-align:right; color:#fc7b08; float:left; margin-right:6%;}
+.spzj input{ width:26%; height:40px; float:left; background:#fc7b08; color:#FFF; border-radius:6px; font-family:"微软雅黑";  margin:5px auto;}
+
+@media only screen and (min-width: 320px) and (max-width: 390px) {
+	.inspxx_pic{ height:80px; margin-top:50px;}
+}
+@media only screen and (min-width: 391px) and (max-width: 460px) {
+	.inspxx_pic{ height:100px; margin-top:40px;}
+}
+@media only screen and (min-width: 461px) and (max-width: 530px) {
+	.inspxx_pic{ height:120px; margin-top:30px;}
+}
+@media only screen and (min-width: 531px) and (max-width: 600px) {
+	.inspxx_pic{ height:140px; margin-top:20px;}
+}
+@media only screen and (min-width: 601px){
+	.inspxx_pic{ height:160px; margin-top:10px;}
+}
+
+
+/*commit end*/
+

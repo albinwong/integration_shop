@@ -1,0 +1,24 @@
+<extend name="layout/home" />
+<block name="tit"><p class="pull_m">产品详情页</p></block>
+<block name="content">
+    <link href="__PUBLIC__/Home/css/style/detail.css" type="text/css" rel="stylesheet"/>
+    <div class="weui_cell_bd">
+        <div class="pic"><img class="pic_pic" src="__PUBLIC__/Uploads/goods/{$goods.pic}"/></div>
+        <div class="ad_name">
+            <p class="inad_name_t">{$goods.gname}({$goods.size})</p>
+            <p class="inad_name_m">产品编号: {$goods.gid}</p>
+            <p class="inad_name_m">产品规格: {$goods.size}</p>
+            <p class="inad_name_br">通粉优惠：260TBC</p>
+            <form action="__URL__/addCart" method="get">
+                <input type="hidden" name="gid" value="{$goods.id}">
+                <button class="inad_name_bl" onClick="com()">购买</button>
+            </form>
+        </div>
+        <p class="ad_cpms">产品描述：</p>
+        <div class="ad_cptd_u">{$goods.desc}</div>
+        <p class="ad_cptd">产品特点：</p>
+        <div class="ad_cptd_u">{$goods.special}</div>
+        <p class="ad_cptd">注意事项：</p>
+        <div class="ad_zysx_u ad_cptd_u">{$goods.notice}</div>
+    </div>
+</block>

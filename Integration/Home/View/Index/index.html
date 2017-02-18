@@ -1,0 +1,75 @@
+<extend name="layout/home" />
+<block name="content">
+<div class="weui_cell_bd">
+	<div class="baner">
+    	<div class="inbaner"><img src="__PUBLIC__/Home/img/baner/baner_1.jpg" alt=""/></div>
+    </div>
+	<div class="weui_navbar">
+        <foreach name="cate" item="vo">
+            <if condition="$key eq 0">
+                <div class="weui_navbar_item weui_bar_item_on" key="{$vo.id}">{$vo.name}</div>
+            <else />
+                <div class="weui_navbar_item" key="{$vo.id}">{$vo.name}</div>
+            </if>
+        </foreach>
+    </div>
+    <div class="ad_tbsc">
+    	<div id="goods" class="inad_tbsc"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        //页面加载完毕
+        var pid = $('.weui_navbar').find('.weui_bar_item_on').attr('key');
+        if(pid){
+            $.ajax({
+                url:'ajax',
+                data:{'pid':pid},
+                dataType:'',
+                type:'POST',
+                success:function(mes){
+                    if(mes!=1){
+                       var res = eval(mes);
+                       for(var i = 0;i<res.length;i++){
+                            var div = $('<a class="inal_ad" href="__URL__/detail?id='+res[i]['id']+'"><div class="inal_ad_pic"><img src="__PUBLIC__/Uploads/goods/'+res[i]['pic']+'"/></div><p class="inal_ad_p1">'+res[i]['gname']+'（'+res[i]['size']+'）</p><p class="inal_ad_p2">价格：'+res[i]['pv']+'TBC</p><p class="inal_ad_p3"><span class="inal_ad_p3l">已售'+res[i]['sales']+'件</span><span class="inal_ad_p3r">库存'+res[i]['repertory']+'件</span></p></a>');
+                            $('#goods').prepend(div);
+                       }
+                   }else{
+                        var div = $('<div style="font-size:22px;padding:20px;"><center>暂无商品</center></div>');
+                        $('#goods').prepend(div);
+                   }
+                }
+            });
+        }
+        //切换分类
+        $('.weui_navbar').eq(1).show().siblings().hide();
+        $('.weui_navbar_item').click(function(){
+            // $(this).addClass(".weui_bar_item_on").siblings().removeClass(".weui_bar_item_on");
+            var sy=$(this).index();
+            // $(".weui_navbar").eq(sy).show().siblings().hide();
+            var pid = $('.weui_navbar').find('.weui_bar_item_on').attr('key');
+            $('#goods').text('');
+            if(pid){
+                $.ajax({
+                    url:'ajax',
+                    data:{'pid':pid},
+                    dataType:'',
+                    type:'POST',
+                    success:function(mes){
+                        if(mes!=1){
+                           var res = eval(mes);
+                           for(var i = 0;i<res.length;i++){
+                            var div = $('<a class="inal_ad" href="__URL__/detail?id='+res[i]['id']+'"><div class="inal_ad_pic"><img src="__PUBLIC__/Uploads/goods/'+res[i]['pic']+'"/></div><p class="inal_ad_p1">'+res[i]['gname']+'（'+res[i]['size']+'）</p><p class="inal_ad_p2">价格：'+res[i]['pv']+'TBC</p><p class="inal_ad_p3"><span class="inal_ad_p3l">已售'+res[i]['sales']+'件</span><span class="inal_ad_p3r">库存'+res[i]['repertory']+'件</span></p></a>');
+                                $('#goods').prepend(div);
+                           }
+                       }else{
+                            var div = $('<div style="font-size:22px;padding:20px;"><center>暂无商品</center></div>');
+                            $('#goods').prepend(div);
+                       }
+                    }
+                });
+            }
+        });
+    });
+</script>
+</block>

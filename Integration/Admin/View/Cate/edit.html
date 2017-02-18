@@ -1,0 +1,35 @@
+<extend name="layout/admin" />
+<block name="title">用户修改</block>
+<block name="content">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">用户添加</div>
+				<div class="panel-body">
+					<div class="col-md-10 col-md-offset-2">
+						<form role="form" action="__URL__/update" method="post">
+							<div class="form-group">
+								<label>父级分类</label>
+								<input disabled class="form-control" value="{$vo['pid']|getPname}" type="text" name="username">
+							</div>
+
+							<div class="form-group">
+								<label>原分类名称</label>
+								<input disabled class="form-control" value="{$vo['name']}">
+							</div>
+
+							<div class="form-group">
+								<label>新分类名称</label>
+								<input class="form-control" placeholder="请输入新分类名称" type="text" name="name">
+							</div>
+
+					       	<input type="hidden" value="{$vo.id}" name="id">
+							<button type="submit" class="btn btn-primary">提交</button>
+							<button type="reset" class="btn btn-default">取消</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.col-->
+	</div>
+</block>

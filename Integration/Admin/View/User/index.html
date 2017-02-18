@@ -1,0 +1,95 @@
+<extend name="layout/admin" />
+<block name="title">用户列表</block>
+<block name="content">
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">用户列表</div>
+			<div class="panel-body">
+				<div class="bootstrap-table">
+					<div class="fixed-table-toolbar">
+						<div class="columns btn-group pull-right">
+							<button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon glyphicon-refresh icon-refresh"></i></button>
+							<button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon glyphicon glyphicon-list-alt icon-list-alt"></i></button>
+						</div>
+						<div class="pull-right search"><input class="form-control" placeholder="Search" type="text"></div>
+					</div>
+					<div class="fixed-table-container">
+						<div class="fixed-table-header"><table></table></div>
+						<div class="fixed-table-body">
+							<div class="fixed-table-loading" style="top: 37px; display: none;">Loading, please wait…</div>
+							<table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc" class="table table-hover">
+							    <thead>
+							    	<tr>
+							    		<th style="">
+							    			<div class="th-inner sortable">ID</div><div class="fht-cell"></div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">用户名</div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">E-mail</div><div class="fht-cell"></div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">手机号码</div><div class="fht-cell"></div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">注册时间</div><div class="fht-cell"></div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">E-mail</div><div class="fht-cell"></div>
+							    		</th>
+							    		<th style="">
+							    			<div class="th-inner sortable">操作</div><div class="fht-cell"></div>
+							    		</th>
+							    	</tr>
+							    </thead>
+								<tbody>
+									<foreach name="res" item="vo" >
+										<tr data-index="0">
+								            <td>{$vo['id']}</td>
+								            <td>{$vo['username']}</td>
+								            <td>{$vo['email']}</td>
+								            <td>{$vo['address']}</td>
+								            <td>{$vo['phone']}</td>
+								            <td>{:date('Y-m-d h:i:s',$vo['regtime'])}</td>
+								            <td>
+								            	<a href="{:U('admin/user/delete',array('id'=>$vo['id']))}">删除</a> |
+												<a href="{:U('admin/user/edit',array('id'=>$vo['id']))}">修改</a>
+											</td>
+										</tr>
+									</foreach>
+								</tbody>
+							</table>
+						</div>
+						<div class="fixed-table-pagination">
+							<div class="pull-left pagination-detail">
+								<span class="page-list">
+									<span class="btn-group dropup">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+											<span class="page-size">10</span>
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" role="menu">
+											<li class="active"><a href="javascript:void(0)">10</a></li>
+											<li><a href="javascript:void(0)">25</a></li>
+											<li><a href="javascript:void(0)">50</a></li>
+											<li><a href="javascript:void(0)">100</a></li>
+										</ul>
+									</span> records per page
+								</span>
+							</div>
+							<div class="pull-right pagination">
+								<ul class="pagination">
+									<li class="page-number"><a href="javascript:void(0)">{$page}</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</block>

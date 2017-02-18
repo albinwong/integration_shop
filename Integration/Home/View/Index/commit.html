@@ -1,0 +1,114 @@
+<extend name="layout/home" />
+<block name="tit">确认订单</block>
+<block name="content">
+    <link href="__PUBLIC__/Home/css/style/commit.css" type="text/css" rel="stylesheet"/>
+	<div class="weui_tab">
+	    
+	    <div class="weui_cell_bd">
+        	
+            <!-- <div class="dizhi">
+                <img class="indz_pic1" src="__PUBLIC__/Home/img/icon/tb-dz.png"/>
+                <div class="indz_m">
+                    <div class="indz_mt">
+                        <p>收货人：{$addr.name}</p>
+                        <p>{$addr.number}</p>
+                    </div>
+                    <div class="indz_mb">{$addr.prov|getAreaName}{$addr.city|getAreaName}{$addr.xian|getAreaName}{$addr.detail}</div>
+                </div>
+                <img class="indz_pic2" src="__PUBLIC__/Home/img/icon/tb-xb.png"/>
+            </div>
+            <ul class="dzxz">
+            <form>
+                <foreach name="addrs" item="addrs">
+                    <li>
+                        <div class="indzxz_m">
+                            <div class="indz_mt">
+                                <p>收货人：{$addrs.name}</p>
+                                <p>{$addrs.number}</p>
+                            </div>
+                            <div class="indz_mb">收货地址：{$addrs.prov|getAreaName}{$addrs.city|getAreaName}{$addrs.xian|getAreaName}{$addrs.detail}</div>
+                        </div>
+                    </li>
+                </foreach>
+                <input type="radio" key={$addrs.id} name="dzdxk"/>
+                <botton class="tjdz">添加地址</botton>
+            </form>
+            </ul>
+            <div class="indztj">
+                <form action="__MODULE__/address/addAddress" method="post">
+                    <p>所在地区
+                        <select name="prov" id="prov">
+                            <option>---请选择---</option>
+                        </select>
+                        <select name="city" id="city">
+                            <option>---请选择---</option>
+                        </select>
+                        <select name="xian" id="xian">
+                            <option>---请选择---</option>
+                        </select>
+                    </p>
+                    <p>请输入地址<input class="dz" disabled type="text" name="detail"/></p>
+                    <p>电话<input class="dh" type="text" name="number"/></p>
+                    <p>收货人<input class="shr" type="text" name="name"/></p>
+                    <input type="hidden" name="user_id" value="{$_SESSION['adminuser']['id']}" />
+                    <input type="hidden" name="isdefault" value="1">
+                    <input class="tjdztj" type="submit" value="提交"/>
+                </form>
+            </div> -->
+            
+            <ul class="spxx">
+            <foreach name="cart" item="vo">
+                <li>
+                    <img class="inspxx_pic" src="__PUBLIC__/Uploads/goods/{$vo.pic}"/>
+                    <div class="inspxx_r">
+                        <div class="inspxx_name">{$vo.gname}</div>
+                        <div class="inspxx_jg">
+                            <div class="inspxx_jgl">价值：{$vo.pv}TBC</div>
+                            <div class="inspxx_m">
+                                商品件数:{$vo.count}
+                            </div>
+                            <botton class="inspxx_sc">删除</botton>
+                        </div>
+                    </div>
+                </li>
+            </foreach>
+            </ul>
+            <div class="sphj">
+                <p>此商品性质不支持7天退货</p>
+                <p class="insphj_m">配送方式:
+                    <span>自提<input class="psfs" type="radio" checked/></span>
+                    <span>快递<input class="psfs" disabled type="radio"/></span>
+                </p>
+                <p class="insphj_b">
+                    <span class="insphj_bt">合计：￥{$vo['pv']*$vo['count']}</span>
+                    <span>共{:count($cart)}件商品</span>
+                </p>
+            </div>
+           
+            <div class="spzj">
+                <p>总计：{$vo['pv']*$vo['count']}TBC</p>
+                <form action="__URL__/doCommit" method="post">
+                    <input type="hidden" name="uid">
+                    <input type="hidden" name="jfzs" value="">
+                    <input type="submit" value="去支付"/>
+                </form>
+            </div>
+    	</div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            function getCookie(name) {
+                var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+                if (arr = document.cookie.match(reg))
+                    return unescape(arr[2]);
+                else
+                    return null;
+            }
+            var user = getCookie(username);
+            $('input[name=uid]').val(user);
+            var a = $('.insphj_b span:nth-child(1)').text();
+            var b = a.replace(/[^0-9]/ig,""); 
+            $('input[name=jfzs]').val(b);
+        });
+    </script>
+</block>
