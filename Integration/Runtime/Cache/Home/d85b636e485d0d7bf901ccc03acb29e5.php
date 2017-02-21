@@ -59,7 +59,7 @@ $(document).ready(function(){
         var pid = $('.weui_navbar').find('.weui_bar_item_on').attr('key');
         if(pid){
             $.ajax({
-                url:'ajax',
+                url:'Home/Index/ajax',
                 data:{'pid':pid},
                 dataType:'',
                 type:'POST',
@@ -87,7 +87,7 @@ $(document).ready(function(){
             $('#goods').text('');
             if(pid){
                 $.ajax({
-                    url:'ajax',
+                    url:'Home/Index/ajax',
                     data:{'pid':pid},
                     dataType:'',
                     type:'POST',
